@@ -28,4 +28,19 @@ public class Player : MonoBehaviour
             rb.velocity = Vector2.zero;
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Action")){
+            InteractionUI.Action = other.GetComponent<Interactable>();
+            InteractionUI.show();
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Action")){
+            InteractionUI.hide();
+        }
+    }
 }

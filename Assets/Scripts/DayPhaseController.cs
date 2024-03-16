@@ -12,61 +12,58 @@ public class DayPhaseController : MonoBehaviour
     [SerializeField]
     private GameObject[] _lights;
 
-    private bool isTransitioning = false;
 
-    private void Update()
+    private void Start(){
+        
+
+        timer.OnTimeChanged += OnTimeChanged;
+    }
+
+    private void OnTimeChanged(object sender, EventArgs e)
     {
-        if (timer.ElapsedTime > 5 * 60 && timer.ElapsedTime < 8 * 60)
-        {
+        if (timer.ElapsedTime > 5 * 60 && timer.ElapsedTime < 8 * 60){ //dawning
             HandleDawning();
-            if(_activateLights && timer.ElapsedTime > 5.5f*60) {
+        }
+        else if ( timer.ElapsedTime >= 8 * 60 && timer.ElapsedTime < 18 * 60){ //day
+            ppv.weight = 0;
+            if(_activateLights) {
                 foreach (var light in _lights) light.SetActive(false);
                 _activateLights = false;
             }
-            
         }
-
-        else if (timer.ElapsedTime > 18 * 60 && timer.ElapsedTime < 22 * 60)
+        else if (timer.ElapsedTime >= 18 * 60 && timer.ElapsedTime < 22 * 60) //twilight
         {
             HandleTwilight();
-            if(!_activateLights && timer.ElapsedTime > 20*60) {
+        }
+        else{ //night
+            ppv.weight = 1;
+            if(!_activateLights) {
                 foreach (var light in _lights) light.SetActive(true);
                 _activateLights = true;
             }
         }
     }
 
+    private void Update()
+    {
+    }
+
     private void HandleTwilight()
     {
-        if (!isTransitioning)
-        {
-
-            StartCoroutine(TransitionLight(240, ppv.weight, 1));
+        ppv.weight = Mathf.Lerp(0, 1, (timer.ElapsedTime - 18 * 60) / 240);
+        if(!_activateLights && timer.ElapsedTime > 20*60) {
+                foreach (var light in _lights) light.SetActive(true);
+                _activateLights = true;
         }
+        
     }
 
     private void HandleDawning()
     {
-        if (!isTransitioning)
-        {
-
-            StartCoroutine(TransitionLight(180, ppv.weight, 0));
+        ppv.weight = Mathf.Lerp(1, 0, (timer.ElapsedTime - 5 * 60) / 180);
+        if(_activateLights && timer.ElapsedTime > 5.5f*60) {
+                foreach (var light in _lights) light.SetActive(false);
+                _activateLights = false;
         }
-    }
-
-    private System.Collections.IEnumerator TransitionLight(float duration, float startWeight, float targetWeight)
-    {
-        isTransitioning = true;
-        float elapsedTime = 0;
-
-        while (elapsedTime < duration)
-        {
-            elapsedTime += Time.deltaTime;
-            ppv.weight = Mathf.Lerp(startWeight, targetWeight, elapsedTime / duration);
-            yield return null;
-        }
-
-        ppv.weight = targetWeight;
-        isTransitioning = false;
     }
 }
