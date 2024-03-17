@@ -16,14 +16,14 @@ public class Timer : MonoBehaviour
 
     public float Time { get => time; set{
         time = value;
-        OnTimeChanged.Invoke(this, EventArgs.Empty);
+        OnTimeChanged?.Invoke(this, EventArgs.Empty);
         }
     }
     public float ElapsedTime { get => Time - dayCount * 24 * 60;}
 
     private void Start()
     {
-        Time = 0;
+        time = 0;
         StartCoroutine(SecondTimer());
         OnSecondPassed+=CheckForDayEnd;
         Time = 15*60;
@@ -38,7 +38,7 @@ public class Timer : MonoBehaviour
 
     void FixedUpdate()
     {
-        Time += UnityEngine.Time.deltaTime;
+        time += UnityEngine.Time.deltaTime;
     }
 
      private IEnumerator SecondTimer()

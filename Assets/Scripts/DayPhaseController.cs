@@ -21,7 +21,12 @@ public class DayPhaseController : MonoBehaviour
 
     private void OnTimeChanged(object sender, EventArgs e)
     {
-        if (timer.ElapsedTime > 5 * 60 && timer.ElapsedTime < 8 * 60){ //dawning
+       
+    }
+
+    private void Update()
+    {
+         if (timer.ElapsedTime > 5 * 60 && timer.ElapsedTime < 8 * 60){ //dawning
             HandleDawning();
         }
         else if ( timer.ElapsedTime >= 8 * 60 && timer.ElapsedTime < 18 * 60){ //day
@@ -42,10 +47,6 @@ public class DayPhaseController : MonoBehaviour
                 _activateLights = true;
             }
         }
-    }
-
-    private void Update()
-    {
     }
 
     private void HandleTwilight()
