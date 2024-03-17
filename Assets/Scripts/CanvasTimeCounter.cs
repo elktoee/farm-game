@@ -17,6 +17,7 @@ public class CanvasTimeCounter : MonoBehaviour
         {
             _counterText = GetComponent<TextMeshProUGUI>();
             timer.OnSecondPassed += HandleCounter;
+            timer.OnTimeChanged += HandleCounter;
         }
 
     private void HandleCounter(object sender, EventArgs e)

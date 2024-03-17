@@ -27,7 +27,7 @@ public class InteractionUI : MonoBehaviour
     }
 
     public static void hide(){
-        instanse.SetActive(false);
+        if (instanse!=null) instanse.SetActive(false);
     }
 
     public static void show(){

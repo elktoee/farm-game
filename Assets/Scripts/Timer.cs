@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(DataController))]
 public class Timer : MonoBehaviour
 {
 
@@ -12,7 +13,7 @@ public class Timer : MonoBehaviour
     public event EventHandler OnTimeChanged;
 
     private int dayCount = 0;
-    private float time = 0;
+    private float time;
 
     public float Time { get => time; set{
         time = value;
@@ -23,10 +24,9 @@ public class Timer : MonoBehaviour
 
     private void Start()
     {
-        time = 0;
         StartCoroutine(SecondTimer());
         OnSecondPassed+=CheckForDayEnd;
-        Time = 15*60;
+        Time = DataController.GameData.Time;
     }
 
     private void CheckForDayEnd(object sender, EventArgs e)

@@ -24970,7 +24970,7 @@ GameObject:
   - component: {fileID: 832857803}
   m_Layer: 0
   m_Name: hero_0
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47988,6 +47988,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: ed301da1d8cd303439a7bc579fad3f29, type: 3}
+  scene: 1
 --- !u!1 &1696411096
 GameObject:
   m_ObjectHideFlags: 0
@@ -57768,6 +57769,7 @@ GameObject:
   - component: {fileID: 2001499067}
   - component: {fileID: 2001499066}
   - component: {fileID: 2001499065}
+  - component: {fileID: 2001499068}
   m_Layer: 0
   m_Name: GameHandler
   m_TagString: Untagged
@@ -57832,6 +57834,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraFollow: {fileID: 1443362314}
   playerTransform: {fileID: 832857800}
+--- !u!114 &2001499068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2001499062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d890d3fc4d71ce745b4dbaa5425f5b36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2007383805
 GameObject:
   m_ObjectHideFlags: 0
