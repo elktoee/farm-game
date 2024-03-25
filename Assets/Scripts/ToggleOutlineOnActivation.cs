@@ -1,32 +1,30 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-[RequireComponent(typeof(Toggle))]
+[RequireComponent(typeof(Button))]
 [RequireComponent(typeof(Outline))]
 public class ToggleOutlineOnActivation : MonoBehaviour
 {
-    private Toggle toggle;
+    private Button toggle;
     private Outline outline;
 
     void Start()
     {
-        toggle = GetComponent<Toggle>();
+        toggle = GetComponent<Button>();
         outline = GetComponent<Outline>();
 
         // Add listener to the toggle's onValueChanged event
-        toggle.onValueChanged.AddListener(OnToggleValueChanged);
+        toggle.onClick.AddListener(OnToggleValueChanged);
     }
 
-    private void OnToggleValueChanged(bool isOn)
+    private void OnToggleValueChanged()
     {
         // Enable or disable the outline based on the toggle state
-        outline.enabled = isOn;
+        outline.enabled = true;
 
         // If outline is enabled, disable outlines on other objects
-        if (isOn)
-        {
-            DisableOutlinesOnOtherObjects();
-        }
+        DisableOutlinesOnOtherObjects();
+        
     }
 
     private void DisableOutlinesOnOtherObjects()
@@ -40,7 +38,6 @@ public class ToggleOutlineOnActivation : MonoBehaviour
             if (obj != this)
             {
                 obj.outline.enabled = false;
-                obj.toggle.isOn = false; // Ensure toggle is off for other objects
             }
         }
     }
