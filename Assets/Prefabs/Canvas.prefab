@@ -827,7 +827,7 @@ RectTransform:
   - {fileID: 5039475577497148021}
   - {fileID: 8133284900219380847}
   m_Father: {fileID: 0}
-  m_RootOrder: 31
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
