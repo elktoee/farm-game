@@ -2543,10 +2543,31 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: tileset_37
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 71
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24b621041a0dab9e9945a27bedd00deb
+      internalID: -346921296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: a37054c197b362172b8aff1ee3da9142
     internalID: 0
     vertices: []
     indices: 
@@ -2585,6 +2606,7 @@ TextureImporter:
       tileset_34: 21300068
       tileset_35: 21300070
       tileset_36: 21300072
+      tileset_37: -1827485888
       tileset_38: 21300074
       tileset_39: 21300076
       tileset_4: 21300008
