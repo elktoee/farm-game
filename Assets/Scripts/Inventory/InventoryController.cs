@@ -6,7 +6,7 @@ using Inventory.UI;
 using UnityEngine;
 
 namespace Inventory{
-public class Inventory : MonoBehaviour 
+public class InventoryController : MonoBehaviour 
 {
    [SerializeField] 
    private UIInventory inventoryUI;

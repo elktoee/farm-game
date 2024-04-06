@@ -9,6 +9,7 @@ using UnityEngine.UI;
 namespace Inventory.UI{
 public class Item : MonoBehaviour
 {
+
     [SerializeField]
     private Image itemImage;
 
@@ -21,10 +22,12 @@ public class Item : MonoBehaviour
 
     private bool empty = true;
 
+
     public void Awake()
     {
         ResetData();
     }
+
 
     public void ResetData(){
         this.itemImage.gameObject.SetActive(false);

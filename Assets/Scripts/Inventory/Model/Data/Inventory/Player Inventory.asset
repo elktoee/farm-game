@@ -15,20 +15,20 @@ MonoBehaviour:
   inventoryItems:
   - quantity: 9
     item: {fileID: 11400000, guid: 96da235e98d042e46853d2b7eb66a2c9, type: 2}
-  - quantity: 1
-    item: {fileID: 11400000, guid: 38ff73be0880c5d8c8750cb3b1d3578c, type: 2}
-  - quantity: 1
-    item: {fileID: 11400000, guid: 2052d4e7b0edd9161b0d790e483e24e1, type: 2}
-  - quantity: 4
-    item: {fileID: 11400000, guid: e504993b0ba27181eb09dfb20774ccba, type: 2}
+  - quantity: 2
+    item: {fileID: 11400000, guid: 96da235e98d042e46853d2b7eb66a2c9, type: 2}
   - quantity: 1
     item: {fileID: 11400000, guid: 2052d4e7b0edd9161b0d790e483e24e1, type: 2}
   - quantity: 1
     item: {fileID: 11400000, guid: 2052d4e7b0edd9161b0d790e483e24e1, type: 2}
   - quantity: 0
     item: {fileID: 0}
-  - quantity: 8
-    item: {fileID: 11400000, guid: 96da235e98d042e46853d2b7eb66a2c9, type: 2}
+  - quantity: 0
+    item: {fileID: 0}
+  - quantity: 0
+    item: {fileID: 0}
+  - quantity: 0
+    item: {fileID: 0}
   - quantity: 0
     item: {fileID: 0}
   <Size>k__BackingField: 9
