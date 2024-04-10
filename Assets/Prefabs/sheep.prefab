@@ -31,7 +31,7 @@ Transform:
   - {fileID: 3697511320859977817}
   - {fileID: 3967831613208894765}
   m_Father: {fileID: 0}
-  m_RootOrder: 36
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6721096464139793164
 GameObject:
@@ -106,9 +106,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingLayerID: 847683689
+  m_SortingLayer: 1
+  m_SortingOrder: 1
   m_Sprite: {fileID: -1941971421, guid: 48e6ee7e81868dff4befc6b8d2f9c093, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -169,10 +169,10 @@ MonoBehaviour:
   speed: 2
   startWaitTime: 8
   moveSpot: {fileID: 3967831613208894765}
-  minX: 22.2
-  maxX: 35
-  maxY: -16
-  minY: -22
+  minX: 19.5
+  maxX: 36.5
+  maxY: -16.2
+  minY: -23.3
   moveVec: {x: 0, y: 0}
 --- !u!1 &7119027762118093777
 GameObject:
