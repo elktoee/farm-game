@@ -549,14 +549,20 @@ TextureImporter:
       name: farm objects free_35
       rect:
         serializedVersion: 2
-        x: 0
-        y: 111
-        width: 16
-        height: 16
+        x: 116
+        y: 95
+        width: 20
+        height: 18
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: -6, y: 8}
+        - {x: -8.5, y: 5.5}
+        - {x: -8.5, y: -7.5}
+        - {x: 8.5, y: -7.5}
+        - {x: 8, y: 6}
+        - {x: 6, y: 8}
       physicsShape: []
       tessellationDetail: 0
       bones: []
@@ -640,7 +646,12 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: -8, y: 8}
+        - {x: -8, y: -8}
+        - {x: -5, y: -8}
+        - {x: -3, y: -6}
+        - {x: -3, y: 8}
       physicsShape: []
       tessellationDetail: 0
       bones: []
@@ -661,7 +672,14 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: -5, y: 8}
+        - {x: -7, y: 7}
+        - {x: -7, y: -7}
+        - {x: -6, y: -8}
+        - {x: 7, y: -8}
+        - {x: 7, y: 6}
+        - {x: 5, y: 8}
       physicsShape: []
       tessellationDetail: 0
       bones: []
@@ -745,7 +763,17 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: 13, y: 11}
+        - {x: 9, y: 15}
+        - {x: -8, y: 15}
+        - {x: -12, y: 11}
+        - {x: -12, y: -13}
+        - {x: -9, y: -15}
+        - {x: -5, y: -14}
+        - {x: 6, y: -14}
+        - {x: 10, y: -15}
+        - {x: 13, y: -13}
       physicsShape: []
       tessellationDetail: 0
       bones: []
@@ -766,7 +794,19 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
+      outline:
+      - - {x: -12, y: 11}
+        - {x: -12, y: -14}
+        - {x: -10, y: -16}
+        - {x: -2, y: -16}
+        - {x: -2, y: -13}
+        - {x: 5, y: -13}
+        - {x: 8, y: -16}
+        - {x: 11, y: -16}
+        - {x: 13, y: -14}
+        - {x: 13, y: 11}
+        - {x: 9, y: 15}
+        - {x: -8, y: 15}
       physicsShape: []
       tessellationDetail: 0
       bones: []
@@ -793,6 +833,27 @@ TextureImporter:
       bones: []
       spriteID: b79337cc43220d5c78905e8b2b967a7f
       internalID: 1562606810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: farm objects free_6
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 79
+        width: 11
+        height: 18
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c4aa49bebc8010c99f2504373d20650
+      internalID: 1369020172
       vertices: []
       indices: 
       edges: []

@@ -46,9 +46,12 @@ GameObject:
   - component: {fileID: 2840029811996103624}
   - component: {fileID: 6047517043269625831}
   - component: {fileID: 2375210934521538044}
+  - component: {fileID: 4144689503220042039}
+  - component: {fileID: 3382931801476975567}
+  - component: {fileID: 2134994629465933182}
   m_Layer: 0
   m_Name: Sheep - Sheet_16
-  m_TagString: Untagged
+  m_TagString: Action
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -174,6 +177,72 @@ MonoBehaviour:
   maxY: -16.2
   minY: -23.3
   moveVec: {x: 0, y: 0}
+--- !u!70 &4144689503220042039
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6721096464139793164}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.99999994, y: 0.99999994}
+  m_Direction: 0
+--- !u!114 &3382931801476975567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6721096464139793164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1673e1b2611a2515b917655860a13c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lootEntries:
+  - itemPrefab: {fileID: 7210257206462941180, guid: a557548d8377d23b596ac7196a6152e3, type: 3}
+    dropChance: 3
+--- !u!114 &2134994629465933182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6721096464139793164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 488de1a0806d5c07089b1db48b72d723, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  icon: {fileID: 21300118, guid: 1e627bcafe9e32d40ad554880f36b5eb, type: 3}
+  lootTable: {fileID: 3382931801476975567}
+  inv: 0
+  prefab: {fileID: 7210257206462941180, guid: c1d00ad52889e3f1b93085e47099b21d, type: 3}
 --- !u!1 &7119027762118093777
 GameObject:
   m_ObjectHideFlags: 0

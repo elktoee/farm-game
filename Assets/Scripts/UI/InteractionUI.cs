@@ -23,14 +23,16 @@ public class InteractionUI : MonoBehaviour
         player = GameObject.FindWithTag("Player");
         instanse = gameObject;
         imageObj = this.GetComponentsInChildren<Image>()[1];
-        hide();
+        Hide();
     }
 
-    public static void hide(){
+
+
+    public static void Hide(){
         if (instanse!=null) instanse.SetActive(false);
     }
 
-    public static void show(){
+    public static void Show(){
         instanse.SetActive(true);
     }
 

@@ -77,9 +77,12 @@ GameObject:
   - component: {fileID: 431888895023661676}
   - component: {fileID: 4064173978144989399}
   - component: {fileID: 3423741607900294278}
+  - component: {fileID: 1487020862782286572}
+  - component: {fileID: 3179749549313505437}
+  - component: {fileID: 1763149673426869097}
   m_Layer: 0
   m_Name: White cow - Sheet_17
-  m_TagString: Untagged
+  m_TagString: Action
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -205,3 +208,69 @@ MonoBehaviour:
   maxY: 0.2
   minY: -8.7
   moveVec: {x: 0, y: 0}
+--- !u!70 &1487020862782286572
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5558564086507747343}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0000038146973, y: 0}
+  m_Size: {x: 1.777778, y: 1.777778}
+  m_Direction: 0
+--- !u!114 &3179749549313505437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5558564086507747343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1673e1b2611a2515b917655860a13c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lootEntries:
+  - itemPrefab: {fileID: 7210257206462941180, guid: 1f4b7713839f9f5b38505d131446e7ef, type: 3}
+    dropChance: 3
+--- !u!114 &1763149673426869097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5558564086507747343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 488de1a0806d5c07089b1db48b72d723, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  icon: {fileID: 21300118, guid: 1e627bcafe9e32d40ad554880f36b5eb, type: 3}
+  lootTable: {fileID: 3179749549313505437}
+  inv: 0
+  prefab: {fileID: 7210257206462941180, guid: 4fb138883aa527fcca4a7904229bcc56, type: 3}

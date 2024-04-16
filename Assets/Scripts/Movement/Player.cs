@@ -8,6 +8,8 @@ public class Player : MonoBehaviour
     public MovementJoystick movementJoystick;
     public float playerSpeed;
     private Rigidbody2D rb;
+
+    
     
     // Start is called before the first frame update
     void Start()
@@ -31,18 +33,5 @@ public class Player : MonoBehaviour
     }
 
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Action")){
-            InteractionUI.Action = other.GetComponent<Interactable>();
-            InteractionUI.show();
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.CompareTag("Action")){
-            InteractionUI.hide();
-        }
-    }
+    
 }

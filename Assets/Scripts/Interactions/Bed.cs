@@ -26,6 +26,7 @@ public class Bed : Interactable
         }
         else
         {
+            player.transform.position = new Vector2(transform.position.x, transform.position.y-1);
             ExitBed();
         }
     }

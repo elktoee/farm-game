@@ -77,9 +77,12 @@ GameObject:
   - component: {fileID: 8053587550844765333}
   - component: {fileID: 5330333769146280259}
   - component: {fileID: 1509275979543798150}
+  - component: {fileID: 3515254056377300148}
+  - component: {fileID: 1098918834227903473}
+  - component: {fileID: 8699384363818789650}
   m_Layer: 0
   m_Name: Pig - Sheet_17
-  m_TagString: Untagged
+  m_TagString: Action
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -205,3 +208,69 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   patrol: {fileID: 5330333769146280259}
+--- !u!114 &3515254056377300148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7762086883131129636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 488de1a0806d5c07089b1db48b72d723, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  icon: {fileID: 21300118, guid: 1e627bcafe9e32d40ad554880f36b5eb, type: 3}
+  lootTable: {fileID: 1098918834227903473}
+  inv: 0
+  prefab: {fileID: 0}
+--- !u!114 &1098918834227903473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7762086883131129636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1673e1b2611a2515b917655860a13c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lootEntries:
+  - itemPrefab: {fileID: 7210257206462941180, guid: 7a8bdd4f13d9df4989b80f4b34c0b7c5, type: 3}
+    dropChance: 3
+--- !u!70 &8699384363818789650
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7762086883131129636}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0000019073486, y: 0}
+  m_Size: {x: 1, y: 1}
+  m_Direction: 0
