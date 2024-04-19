@@ -121,6 +121,23 @@ public class InventorySO : ScriptableObject
             return inventoryItems[itemIndex];
         }
 
+        public void RemoveItem(int itemIndex, int amount)
+        {
+            if (inventoryItems.Count > itemIndex)
+            {
+                if (inventoryItems[itemIndex].IsEmpty)
+                    return;
+                int reminder = inventoryItems[itemIndex].quantity - amount;
+                if (reminder <= 0)
+                    inventoryItems[itemIndex] = InventoryItem.GetEmptyItem();
+                else
+                    inventoryItems[itemIndex] = inventoryItems[itemIndex]
+                        .ChangeQuantity(reminder);
+
+                InformAboutChange();
+            }
+        }
+
         public void SwapItems(int itemIndex_1, int itemIndex_2)
         {
             InventoryItem item1 = inventoryItems[itemIndex_1];
@@ -134,6 +151,7 @@ public class InventorySO : ScriptableObject
             OnInventoryUpdated?.Invoke(GetCurrentInventoryState());
         }
     }
+    
 
 [Serializable]
 public struct InventoryItem

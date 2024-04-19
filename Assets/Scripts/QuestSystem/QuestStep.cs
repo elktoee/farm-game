@@ -8,8 +8,15 @@ public abstract class QuestStep : MonoBehaviour
 
     private string questId;
 
-    public void IntializeQuestStep(string questId){
+    private int stepIndex;
+
+    public void IntializeQuestStep(string questId, int stepIndex, string questStepState){
         this.questId = questId;
+        this.stepIndex = stepIndex;
+        if (questStepState != null && questStepState != "")
+        {
+            SetQuestStepState(questStepState);
+        }
     }
     
     protected void FinishQuestStep(){
@@ -19,4 +26,14 @@ public abstract class QuestStep : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+
+    protected void ChangeState(string newState, string newStatus)
+    {
+        GameEventManager.instance.questEvents.QuestStepStateChange(
+            questId, 
+            stepIndex, 
+            new QuestStepState(newState, newStatus));
+    }
+
+    protected abstract void SetQuestStepState(string state);
 }

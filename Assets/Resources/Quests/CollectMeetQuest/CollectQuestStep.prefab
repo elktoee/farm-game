@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 27
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1029861500921719032
 MonoBehaviour:
@@ -44,5 +44,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e39961c2b7be64f6b6bd2d30b23a552, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemSO: {fileID: 11400000, guid: 96da235e98d042e46853d2b7eb66a2c9, type: 2}
   playerInventory: {fileID: 11400000, guid: ec6bdbaafdcc851ccbe3ec64285b72ff, type: 2}
+  collectQuestItems:
+  - itemSO: {fileID: 11400000, guid: 96da235e98d042e46853d2b7eb66a2c9, type: 2}
+    itemsToCollect: 10
+    collectedItems: 0
+    isCollected: 0
+  - itemSO: {fileID: 11400000, guid: 340029ab5266723869c9e7574ad9c5d0, type: 2}
+    itemsToCollect: 1
+    collectedItems: 0
+    isCollected: 0

@@ -2,6 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum QuestType
+{
+    Generic,
+    Collect,
+}
+
 [CreateAssetMenu(fileName = "QuestInfoSO", menuName = "ScriptableObjects/QuestInfoSO", order = 1)]
 public class QuestInfoSO : ScriptableObject
 {
@@ -9,6 +15,8 @@ public class QuestInfoSO : ScriptableObject
 
     [Header("General")]
     public string displayName;
+    public string description;
+    public string quest;
 
     [Header("Requirements")]
 

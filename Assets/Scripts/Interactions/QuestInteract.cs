@@ -11,6 +11,8 @@ public class QuestInteract : Interactable
     [SerializeField] private bool startPoint = true;
     [SerializeField] private bool finishPoint = true;
 
+    [SerializeField] private QuestUI questUI;
+
     private string questId;
     private QuestState currentQuestState;
 
@@ -45,14 +47,23 @@ public class QuestInteract : Interactable
 
     public override void Interact(GameObject player)
     {
-         // start or finish a quest
-        if (currentQuestState.Equals(QuestState.CAN_START) && startPoint)
+         if (currentQuestState.Equals(QuestState.CAN_START) && startPoint)
         {
-            GameEventManager.instance.questEvents.StartQuest(questId);
+            questUI.Show(questInfoForPoint);
         }
         else if (currentQuestState.Equals(QuestState.CAN_FINISH) && finishPoint)
         {
             GameEventManager.instance.questEvents.FinishQuest(questId);
+            
         }
+        
     }
+
+    public void QuestStart(){
+        
+        GameEventManager.instance.questEvents.StartQuest(questId);
+        questUI.Hide();
+       
+    }
+
 }

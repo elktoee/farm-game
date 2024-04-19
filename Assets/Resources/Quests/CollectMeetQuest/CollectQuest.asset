@@ -13,8 +13,12 @@ MonoBehaviour:
   m_Name: CollectQuest
   m_EditorClassIdentifier: 
   <id>k__BackingField: CollectQuest
-  displayName: Collect
+  displayName: Collect Potatoes
+  description: The village farmers urgently need potatoes for the upcoming winter.
+    Your task is to gather a sufficient quantity of potatoes from the fields. Return
+    to Farmer Griswald when you've gathered enough.
+  quest: Collect 10 potatoes
   questPrerequisites: []
   questStepPrefabs:
   - {fileID: 4737869404789539308, guid: 535b24e3d3660b17ebe91cfa21107949, type: 3}
-  goldReward: 5
+  goldReward: 10

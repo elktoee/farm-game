@@ -15307,6 +15307,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1680893480076275081, guid: 27996a528a2e9454ab4f6014fa1a04d9, type: 3}
+      propertyPath: playerBalance
+      value: 
+      objectReference: {fileID: 5377140422141556736}
     - target: {fileID: 1683065162840398234, guid: 27996a528a2e9454ab4f6014fa1a04d9, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -16130,3 +16134,14 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 148aca71652e17f1c8bc5668ad1c30ff, type: 3}
+--- !u!114 &5377140422141556736 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2139150767755558675, guid: 148aca71652e17f1c8bc5668ad1c30ff, type: 3}
+  m_PrefabInstance: {fileID: 5377140422141556735}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: feead3ab8a24548f5820ae64ff1c70d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
