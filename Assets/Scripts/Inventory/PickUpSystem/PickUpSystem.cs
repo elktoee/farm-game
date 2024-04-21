@@ -8,7 +8,7 @@ public class PickUpSystem : MonoBehaviour
     [SerializeField]
     private InventorySO inventoryData;
 
-    // Подія, яка спрацьовує при підборі предмету
+    // Подія, яка спрацьовує при підборі предмету 
     public event System.Action<ItemP> OnItemPickedUp;
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -21,8 +21,6 @@ public class PickUpSystem : MonoBehaviour
                 item.DestroyItem();
             else
                 item.Quantity = reminder;
-
-            // Спрацьовуємо подію при підборі предмету
             OnItemPickedUp?.Invoke(item);
         }
     }

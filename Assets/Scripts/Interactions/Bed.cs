@@ -18,7 +18,7 @@ public class Bed : Interactable
 
     public override void Interact(GameObject player)
     {
-        float currentTime = timer.ElapsedTime;
+        float currentTime = timer.Time;
 
         if ((currentTime >= 20 * 60 || currentTime < 6 * 60) && !isOnBed)
         {
@@ -51,7 +51,7 @@ public class Bed : Interactable
 
  void Update()
     {
-        if ((timer.ElapsedTime <= 20 * 60 && timer.ElapsedTime > 6 * 60) && isOnBed)
+        if ((timer.Time <= 20 * 60 && timer.Time > 6 * 60) && isOnBed)
         {
             ExitBed();
         }

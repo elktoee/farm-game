@@ -21,22 +21,17 @@ public class DayPhaseController : MonoBehaviour
 
     private void OnTimeChanged(object sender, EventArgs e)
     {
-       
-    }
-
-    private void Update()
-    {
-         if (timer.ElapsedTime > 5 * 60 && timer.ElapsedTime < 8 * 60){ //dawning
+        if (timer.Time > 5 * 60 && timer.Time < 8 * 60){ //dawning
             HandleDawning();
         }
-        else if ( timer.ElapsedTime >= 8 * 60 && timer.ElapsedTime < 18 * 60){ //day
+        else if ( timer.Time >= 8 * 60 && timer.Time < 18 * 60){ //day
             ppv.weight = 0;
             if(_activateLights) {
                 foreach (var light in _lights) light.SetActive(false);
                 _activateLights = false;
             }
         }
-        else if (timer.ElapsedTime >= 18 * 60 && timer.ElapsedTime < 22 * 60) //twilight
+        else if (timer.Time >= 18 * 60 && timer.Time < 22 * 60) //twilight
         {
             HandleTwilight();
         }
@@ -49,10 +44,29 @@ public class DayPhaseController : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+         if (timer.Time > 5 * 60 && timer.Time < 8 * 60){ //dawning
+            HandleDawning();
+        }
+        else if ( timer.Time >= 8 * 60 && timer.Time < 18 * 60){ //day
+            ppv.weight = 0;
+        
+        }
+        else if (timer.Time >= 18 * 60 && timer.Time < 22 * 60) //twilight
+        {
+            HandleTwilight();
+        }
+        else{ //night
+            ppv.weight = 1;
+
+        }
+    }
+
     private void HandleTwilight()
     {
-        ppv.weight = Mathf.Lerp(0, 1, (timer.ElapsedTime - 18 * 60) / 240);
-        if(!_activateLights && timer.ElapsedTime > 20*60) {
+        ppv.weight = Mathf.Lerp(0, 1, (timer.Time - 18 * 60) / 240);
+        if(!_activateLights && timer.Time > 20*60) {
                 foreach (var light in _lights) light.SetActive(true);
                 _activateLights = true;
         }
@@ -61,8 +75,8 @@ public class DayPhaseController : MonoBehaviour
 
     private void HandleDawning()
     {
-        ppv.weight = Mathf.Lerp(1, 0, (timer.ElapsedTime - 5 * 60) / 180);
-        if(_activateLights && timer.ElapsedTime > 5.5f*60) {
+        ppv.weight = Mathf.Lerp(1, 0, (timer.Time - 5 * 60) / 180);
+        if(_activateLights && timer.Time > 5.5f*60) {
                 foreach (var light in _lights) light.SetActive(false);
                 _activateLights = false;
         }

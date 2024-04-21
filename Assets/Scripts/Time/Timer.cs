@@ -20,19 +20,22 @@ public class Timer : MonoBehaviour
         OnTimeChanged?.Invoke(this, EventArgs.Empty);
         }
     }
-    public float ElapsedTime { get => Time - dayCount * 24 * 60;}
 
-    private void Start()
+    public float FullTime{ get => time + dayCount * 24*60;}
+
+    private void Awake()
     {
         StartCoroutine(SecondTimer());
         OnSecondPassed+=CheckForDayEnd;
         Time = DataController.GameData.Time;
+        
     }
 
     private void CheckForDayEnd(object sender, EventArgs e)
     {
-        if (ElapsedTime >= 24*60){
+        if (time >= 24*60){
             dayCount++;
+            time -= 24 * 60;
         }
     }
 

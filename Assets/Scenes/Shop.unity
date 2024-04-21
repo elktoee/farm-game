@@ -1501,6 +1501,7 @@ GameObject:
   - component: {fileID: 1551222943}
   - component: {fileID: 1551222942}
   - component: {fileID: 1551222941}
+  - component: {fileID: 1551222946}
   m_Layer: 0
   m_Name: GameHandler
   m_TagString: Untagged
@@ -1576,6 +1577,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1551222946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1551222940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6b2696f7c7424b4f9c184574ee694e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: {fileID: 1551222943}
 --- !u!1 &1634778674
 GameObject:
   m_ObjectHideFlags: 0
@@ -1786,7 +1800,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2848031929518781442, guid: 27996a528a2e9454ab4f6014fa1a04d9, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3032054100872859201, guid: 27996a528a2e9454ab4f6014fa1a04d9, type: 3}
       propertyPath: m_AnchorMax.x
