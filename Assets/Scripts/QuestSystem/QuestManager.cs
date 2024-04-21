@@ -6,6 +6,7 @@ public class QuestManager : MonoBehaviour
 {
     [Header("Config")]
     [SerializeField] private bool loadQuestState = true;
+    [SerializeField] private CollectQuestStep collectQuestStep;
 
     private void Awake(){
         questMap = CreateQuestMap();
@@ -111,6 +112,7 @@ public class QuestManager : MonoBehaviour
     private void FinishQuest(string id)
     {
         Quest quest = GetQuestById(id);
+        collectQuestStep.RemoveItems();
         ClaimRewards(quest);
         ChangeQuestState(quest.info.id, QuestState.FINISHED);    
     }

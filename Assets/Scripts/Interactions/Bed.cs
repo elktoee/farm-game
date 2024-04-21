@@ -24,11 +24,7 @@ public class Bed : Interactable
         {
             EnterBed(player);
         }
-        else
-        {
-            player.transform.position = new Vector2(transform.position.x, transform.position.y-1);
-            ExitBed();
-        }
+        else ExitBed();
     }
 
     private void EnterBed(GameObject player)

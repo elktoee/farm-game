@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using Inventory.Model;
+using Inventory.UI;
 using UnityEngine;
 
 public enum QuestType
@@ -27,6 +29,7 @@ public class QuestInfoSO : ScriptableObject
 
     [Header("Rewards")]
     public int goldReward;
+
     // public int experienceReward;
 
     // ensure the id is always the name of the Scriptable Object asset

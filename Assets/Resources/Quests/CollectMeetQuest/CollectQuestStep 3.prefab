@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2852339349627005093}
   - component: {fileID: 1029861500921719032}
   m_Layer: 0
-  m_Name: CollectQuestStep
+  m_Name: CollectQuestStep 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48,5 +48,9 @@ MonoBehaviour:
   collectQuestItems:
   - itemSO: {fileID: 11400000, guid: 96da235e98d042e46853d2b7eb66a2c9, type: 2}
     itemsToCollect: 10
+    collectedItems: 0
+    isCollected: 0
+  - itemSO: {fileID: 11400000, guid: 340029ab5266723869c9e7574ad9c5d0, type: 2}
+    itemsToCollect: 1
     collectedItems: 0
     isCollected: 0
