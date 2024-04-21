@@ -2,137 +2,128 @@ using UnityEngine;
 using System;
 using System.Collections.Generic;
 
-[Serializable]
-public class PredefinedAction
-{
-    public string actionKey;
-    public float startTime;
-    public float delay;
-}
-
-[Serializable]
-public class PredefinedActionList{
-    public List<PredefinedAction> actions;
-}
-
 public class TimedActionManager : MonoBehaviour
 {
     [SerializeField]
     private Timer timer;
-    public static TimedActionManager instance;
+    private const string ActionDataKey = "ActionData";
 
-    // Predefined dictionary of actions with string keys
-    private Dictionary<string, Action> predefinedActions = new Dictionary<string, Action>
+    [Serializable]
+    public class ActionData
     {
-        { "Action1", () => Debug.Log("Action 1 executed.") },
-        { "Action2", () => Debug.Log("Action 2 executed.") }
-        // Add more predefined actions here as needed
-    };
+        public string SerializedDelegate;
+        public string ParameterBase64;
+        public string ParameterType;
+        public float Delay;
+        public float StartTime;
 
-    // List to store predefined actions with their expiration times
-    private List<PredefinedAction> predefinedActionList = new List<PredefinedAction>();
-
-    private PredefinedActionList predefinedActionListClass = new PredefinedActionList();
-    private void Awake()
-    {
-        if (instance != null)
+        public ActionData(string serializedDelegate, string parameterBase64, string parameterType, float delay, float startTime)
         {
-            Destroy(gameObject); // Ensure only one instance exists
-            return;
-        }
-
-        instance = this;
-        DontDestroyOnLoad(gameObject);
-
-        // Load saved actions and their expiration times
-        LoadActionsFromPlayerPrefs();
-    }
-
-    // Method to execute action after a delay
-    public void ExecuteActionAfterDelay(string key, float delay)
-    {
-        if (predefinedActions.TryGetValue(key, out Action action))
-        {
-            StartCoroutine(InvokeActionAfterDelay(action, delay));
-
-
-            var predefinedAction = new PredefinedAction();
-            predefinedAction.actionKey = key;
-            predefinedAction.startTime = timer.FullTime;
-            predefinedAction.delay = delay;
-            predefinedActionList.Add(predefinedAction);
-            SaveActionsToPlayerPrefs();
+            SerializedDelegate = serializedDelegate;
+            ParameterBase64 = parameterBase64;
+            ParameterType = parameterType;
+            Delay = delay;
+            StartTime = startTime;
         }
     }
 
-    private System.Collections.IEnumerator InvokeActionAfterDelay(Action action, float delay)
+    private void Start()
+    {
+        // Deserialize and execute stored actions on start
+        DeserializeAndExecuteStoredActions();
+    }
+
+    public void ExecuteActionAfterDelay<T>((Action<T> action, T parameter, float delay) actionInfo)
+    {
+        ActionData data = new ActionData(
+            SerializeDelegateSystem.SerializeDelegate(actionInfo.action),
+            Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes(JsonUtility.ToJson(actionInfo.parameter))),
+            typeof(T).AssemblyQualifiedName,
+            actionInfo.delay,
+            Timer.FullTime
+        );
+
+        // Retrieve existing action data from PlayerPrefs
+        List<ActionData> actionDataList = GetStoredActionData();
+
+        // Add new action data
+        actionDataList.Add(data);
+
+        // Store updated action data list in PlayerPrefs
+        StoreActionData(actionDataList);
+
+        StartCoroutine(ExecuteDelayedAction(actionInfo.action, actionInfo.parameter, actionInfo.delay));
+    }
+
+    private System.Collections.IEnumerator ExecuteDelayedAction<T>(Action<T> action, T parameter, float delay)
     {
         yield return new WaitForSeconds(delay);
-        action?.Invoke();
+
+        // Execute the action
+        action(parameter);
     }
 
-    // Method to save actions and their expiration times to PlayerPrefs
-    private void SaveActionsToPlayerPrefs()
+    private List<ActionData> GetStoredActionData()
     {
-        predefinedActionListClass.actions = predefinedActionList;
-        string json = JsonUtility.ToJson(predefinedActionListClass);
-        PlayerPrefs.SetString("PredefinedActions", json);
-        PlayerPrefs.Save();
+        string storedDataJson = PlayerPrefs.GetString(ActionDataKey);
+        return string.IsNullOrEmpty(storedDataJson) ? new List<ActionData>() : JsonUtility.FromJson<List<ActionData>>(storedDataJson);
     }
 
-    // Method to load actions and their expiration times from PlayerPrefs
-    private void LoadActionsFromPlayerPrefs()
-{
-    List<PredefinedAction> actionsToRemove = new List<PredefinedAction>();
-
-    if (PlayerPrefs.HasKey("PredefinedActions"))
+    private void StoreActionData(List<ActionData> actionDataList)
     {
-        string json = PlayerPrefs.GetString("PredefinedActions");
+        string dataJson = JsonUtility.ToJson(actionDataList);
+        PlayerPrefs.SetString(ActionDataKey, dataJson);
+    }
 
-        Debug.Log(json);
-        
-        predefinedActionList = JsonUtility.FromJson<PredefinedActionList>(json).actions;
-
-        foreach (PredefinedAction action in predefinedActionList)
+    private void DeserializeAndExecuteStoredActions()
+    {
+        List<ActionData> actionDataList = GetStoredActionData();
+        foreach (var actionData in actionDataList)
         {
-            
-            if (action.startTime + action.delay >= timer.FullTime)
-            {   
-                Debug.Log(action.startTime + "   f" + timer.FullTime);
-                float delay = action.startTime + action.delay - timer.FullTime;
-                StartCoroutine(InvokeActionAfterDelay(() => ExecuteActionAfterDelay(action.actionKey, delay), delay));
-            }
-            else
-            {
-                actionsToRemove.Add(action);
-            }
-        }
+            // Deserialize the delegate
+            Type delegateType = typeof(Action);
+            Delegate deserializedDelegate = SerializeDelegateSystem.DeserializeDelegate(delegateType, actionData.SerializedDelegate);
 
-        // Remove expired actions outside the loop
-        foreach (PredefinedAction actionToRemove in actionsToRemove)
-        {
-            predefinedActionList.Remove(actionToRemove);
-        }
+            // Deserialize the parameter
+            Type parameterType = Type.GetType(actionData.ParameterType);
+            object parameter = DeserializeParameter(actionData.ParameterBase64, parameterType);
 
-        this.SaveActionsToPlayerPrefs();
+            // Calculate remaining delay
+            float elapsedTime = timer.FullTime - actionData.StartTime;
+            float remainingDelay = Mathf.Max(actionData.Delay - elapsedTime, 0f);
+
+            // Execute the action after the remaining delay
+            StartCoroutine(ExecuteDelayedAction(deserializedDelegate, parameter, remainingDelay));
+        }
+    }
+
+    private object DeserializeParameter(string parameterBase64, Type type)
+    {
+        byte[] parameterBytes = Convert.FromBase64String(parameterBase64);
+        string parameterJson = System.Text.Encoding.UTF8.GetString(parameterBytes);
+        return JsonUtility.FromJson(parameterJson, type);
     }
 }
 
-    public void ExecuteActionAtInterval(Action action, float interval)
+public class SerializeDelegateSystem
+{
+    public static string SerializeDelegate(Delegate d)
     {
-        StartCoroutine(InvokeActionAtInterval(action, interval));
-    }
-
-
-    private System.Collections.IEnumerator InvokeActionAtInterval(Action action, float interval)
-    {
-        while (true)
+        using (System.IO.MemoryStream stream = new System.IO.MemoryStream())
         {
-            yield return new WaitForSeconds(interval);
-            action?.Invoke();
+            System.Runtime.Serialization.Formatters.Binary.BinaryFormatter formatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
+            formatter.Serialize(stream, d);
+            return Convert.ToBase64String(stream.ToArray());
         }
     }
 
-
-
+    public static Delegate DeserializeDelegate(Type delegateType, string serializedDelegate)
+    {
+        byte[] bytes = Convert.FromBase64String(serializedDelegate);
+        using (System.IO.MemoryStream stream = new System.IO.MemoryStream(bytes))
+        {
+            System.Runtime.Serialization.Formatters.Binary.BinaryFormatter formatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
+            return formatter.Deserialize(stream) as Delegate;
+        }
+    }
 }

@@ -21,10 +21,7 @@ public class DataController: MonoBehaviour
     private void Start(){
         timer = gameObject.GetComponent<Timer>();
 
-        TimedActionManager.instance.ExecuteActionAtInterval(()=>{
-            SaveGameData();
-        },
-        7);
+        //TimedActionManager.instance.ExecuteActionAtInterval(()=>{SaveGameData();},7);
     }
 
     public static void SaveGameData()
