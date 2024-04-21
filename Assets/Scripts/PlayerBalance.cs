@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerBalance : MonoBehaviour
 {
-    private int coins = 0; // Початковий баланс гравця
+    private int coins = 100; // Початковий баланс гравця
 
     // Додаємо монети до балансу
     public void AddCoins(int amount)

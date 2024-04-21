@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <IsStackable>k__BackingField: 1
   <MaxStackSize>k__BackingField: 9
-  <Name>k__BackingField: "\u042F\u0439\u0446\u0435"
-  <Description>k__BackingField: 
+  <Price>k__BackingField: 3
+  <Name>k__BackingField: Egg
+  <Description>k__BackingField: A fresh egg laid by farm chickens, a nutritious staple
+    for cooking and baking a variety of delicious dishes.
   <ItemImage>k__BackingField: {fileID: 21300228, guid: 2700e06d970d112489ff23cfb58c3f78, type: 3}

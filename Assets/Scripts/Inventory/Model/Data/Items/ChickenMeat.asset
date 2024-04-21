@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <IsStackable>k__BackingField: 1
   <MaxStackSize>k__BackingField: 9
-  <Name>k__BackingField: "\u041A\u0443\u0440\u044F\u0442\u0438\u043D\u0430"
-  <Description>k__BackingField: 
+  <Price>k__BackingField: 3
+  <Name>k__BackingField: Chicken Meat
+  <Description>k__BackingField: Tender, flavorful meat from farm-raised chickens,
+    perfect for grilling, roasting, or adding protein to farm-fresh meals.
   <ItemImage>k__BackingField: {fileID: 719118079, guid: 2e969b61aaa2ff0c2ac3c0df5a284ca4, type: 3}

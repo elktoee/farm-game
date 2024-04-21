@@ -104,6 +104,7 @@ public class UIInventory : MonoBehaviour
                 item.ResetData();
             }
         }
+
         
     }
 }

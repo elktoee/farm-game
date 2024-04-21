@@ -15,6 +15,9 @@ public class ItemSO : ScriptableObject
     public int MaxStackSize { get; set; } = 1;
 
     [field: SerializeField]
+    public int Price { get; set; } = 1;
+
+    [field: SerializeField]
     public string Name { get; set; }
 
     [field: SerializeField]

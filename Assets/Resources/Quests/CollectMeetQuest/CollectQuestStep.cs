@@ -124,31 +124,5 @@ public class CollectQuestStep : QuestStep
 
 
 
-    public void RemoveItemsFromInventory(ItemSO item, int itemsToRemove)
-    {
-        // Отримуємо поточний стан інвентаря гравця
-        Dictionary<int, InventoryItem> inventoryState = playerInventory.GetCurrentInventoryState();
-
-        // Переглядаємо усі предмети в інвентарі
-        foreach (var kvp in inventoryState)
-        {
-            // Якщо це предмет, який ми хочемо видалити
-            if (kvp.Value.item == item)
-            {
-                // Перевіряємо, скільки з нього ми хочемо видалити
-                if (itemsToRemove >= kvp.Value.quantity)
-                {
-                    // Якщо ми хочемо видалити більше або стільки ж, скільки є в інвентарі, то просто видаляємо весь предмет
-                    playerInventory.RemoveItem(kvp.Key, kvp.Value.quantity);
-                    itemsToRemove -= kvp.Value.quantity;
-                }
-                else
-                {
-                    // Якщо ми хочемо видалити менше, ніж є в інвентарі, то просто видаляємо потрібну кількість
-                    playerInventory.RemoveItem(kvp.Key, itemsToRemove);
-                    break; // Вийдемо з циклу, бо вже видалили все, що хотіли
-                }
-            }
-        }
-    }
+    
 }

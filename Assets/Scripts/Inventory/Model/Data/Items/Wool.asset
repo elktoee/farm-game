@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <IsStackable>k__BackingField: 1
   <MaxStackSize>k__BackingField: 9
+  <Price>k__BackingField: 3
   <Name>k__BackingField: "\u0428\u0435\u0440\u0441\u0442\u044C"
   <Description>k__BackingField: 
   <ItemImage>k__BackingField: {fileID: 21300000, guid: a88d5300df9790349866dcad93d3a1ea, type: 3}

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Inventory.Model;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -15,8 +16,7 @@ public class Item : MonoBehaviour
 
     [SerializeField]
     private TMP_Text quantityTxt;
-
-
+    
     public event Action<Item> OnItemClicked,
     OnItemDroppedOn, OnItemBeingDrag, OnItemEndDrag;
 
