@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb270e6740901d8088458833a0f61d48, type: 3}
   m_Name: CollectQuest 3
   m_EditorClassIdentifier: 
-  <id>k__BackingField: CollectQuest
+  <id>k__BackingField: CollectQuest 3
   displayName: Collect Potatoes
   description: The village farmers urgently need potatoes for the upcoming winter.
     Your task is to gather a sufficient quantity of potatoes from the fields. Return

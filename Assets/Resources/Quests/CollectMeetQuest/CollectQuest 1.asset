@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb270e6740901d8088458833a0f61d48, type: 3}
   m_Name: CollectQuest 1
   m_EditorClassIdentifier: 
-  <id>k__BackingField: CollectQuest
-  displayName: Collect Potatoes
-  description: The village farmers urgently need potatoes for the upcoming winter.
-    Your task is to gather a sufficient quantity of potatoes from the fields. Return
-    to Farmer Griswald when you've gathered enough.
+  <id>k__BackingField: CollectQuest 1
+  displayName: Harvest Feast
+  description: The village is hungry for a feast, and it's up to you to provide!
+    Gather 5 chicken meat, 5 cow meat, and 7 pig meat from your farm. Beware of farmyard
+    antics as you collect the ingredients. Return to the innkeeper with your bounty
+    to be hailed as the hero of the harvest!
   quest: Collect 10 potatoes
   questPrerequisites: []
   questStepPrefabs:
-  - {fileID: 4737869404789539308, guid: 535b24e3d3660b17ebe91cfa21107949, type: 3}
-  goldReward: 10
+  - {fileID: 4737869404789539308, guid: 6de21b5de4360c3f9a24111c78e4c693, type: 3}
+  goldReward: 25

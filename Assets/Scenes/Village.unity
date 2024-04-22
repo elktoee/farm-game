@@ -218,6 +218,7 @@ GameObject:
   m_Component:
   - component: {fileID: 80037504}
   - component: {fileID: 80037505}
+  - component: {fileID: 80037506}
   m_Layer: 8
   m_Name: npc_14
   m_TagString: Untagged
@@ -292,6 +293,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &80037506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 80037503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c0cf4ac045274249a7a347aa2aa33ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  icon: {fileID: 21300000, guid: f73f68fe6815f5548a6c2a61b9e49add, type: 3}
+  questInfoForPoint: {fileID: 11400000, guid: 0ddda619c7e23f31a8a586c2bf846cdf, type: 2}
+  startPoint: 1
+  finishPoint: 1
+  questUI: {fileID: 1012221982}
 --- !u!1 &139441977
 GameObject:
   m_ObjectHideFlags: 0
@@ -8627,6 +8645,7 @@ GameObject:
   m_Component:
   - component: {fileID: 469367378}
   - component: {fileID: 469367379}
+  - component: {fileID: 469367380}
   m_Layer: 8
   m_Name: npc_12
   m_TagString: Untagged
@@ -8701,6 +8720,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &469367380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 469367377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c0cf4ac045274249a7a347aa2aa33ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  icon: {fileID: 21300000, guid: f73f68fe6815f5548a6c2a61b9e49add, type: 3}
+  questInfoForPoint: {fileID: 11400000, guid: c23a51dd2913a8f7bbddc01d30e52158, type: 2}
+  startPoint: 0
+  finishPoint: 1
+  questUI: {fileID: 1012221982}
 --- !u!1 &482744211
 GameObject:
   m_ObjectHideFlags: 0
@@ -92331,7 +92367,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6816792898240162904, guid: a297298b658da14faa4abf469cf28259, type: 3}
       propertyPath: finishPoint
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8601181888861765745, guid: a297298b658da14faa4abf469cf28259, type: 3}
       propertyPath: m_Name
@@ -92366,6 +92402,10 @@ PrefabInstance:
       propertyPath: loadQuestState
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4832856382189258969, guid: e545c1ef6ba929d89a2df8eba1611601, type: 3}
+      propertyPath: collectQuestStep
+      value: 
+      objectReference: {fileID: 1029861500921719032, guid: 535b24e3d3660b17ebe91cfa21107949, type: 3}
     - target: {fileID: 5729200146213373113, guid: e545c1ef6ba929d89a2df8eba1611601, type: 3}
       propertyPath: ppv
       value: 
