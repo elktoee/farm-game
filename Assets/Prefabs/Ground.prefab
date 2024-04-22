@@ -219,4 +219,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   icon: {fileID: 21300218, guid: 2700e06d970d112489ff23cfb58c3f78, type: 3}
-  var: 0
+  toPlantIcon: {fileID: -1586837695, guid: b95923c8c74f3777fbc74434e9145466, type: 3}
+  waterSprite: {fileID: 21300218, guid: 2700e06d970d112489ff23cfb58c3f78, type: 3}

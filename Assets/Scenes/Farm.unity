@@ -1871,6 +1871,7 @@ GameObject:
   - component: {fileID: 2001499068}
   - component: {fileID: 2001499069}
   - component: {fileID: 2001499070}
+  - component: {fileID: 2001499071}
   m_Layer: 0
   m_Name: GameHandler
   m_TagString: Untagged
@@ -1975,6 +1976,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b48c3bcd96c2bb4c7b07f99501c4293e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2001499071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2001499062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e3d8dcfbd296744783dbbc0be5f6491, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventorySO: {fileID: 11400000, guid: ec6bdbaafdcc851ccbe3ec64285b72ff, type: 2}
+  uIInventory: {fileID: 2108220492}
+  currentId: 0
+  images:
+  - {fileID: 733953974, guid: b95923c8c74f3777fbc74434e9145466, type: 3}
+  - {fileID: -1708055502, guid: b95923c8c74f3777fbc74434e9145466, type: 3}
+  - {fileID: -2024834794, guid: b95923c8c74f3777fbc74434e9145466, type: 3}
+  - {fileID: 266190676, guid: b95923c8c74f3777fbc74434e9145466, type: 3}
+  - {fileID: 21300218, guid: 2700e06d970d112489ff23cfb58c3f78, type: 3}
+  objects:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 850930655009509678, guid: b0e7b2abd3cbe484dbdf13134c59eeb8, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  isSelectedObject: 0
+  selectedObject: {fileID: 0}
 --- !u!1 &2076751981
 GameObject:
   m_ObjectHideFlags: 0
@@ -2105,6 +2135,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6196033470202716097, guid: 703098f698b4d914db4f8696d3d61d41, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6421142040566073232, guid: 703098f698b4d914db4f8696d3d61d41, type: 3}
       propertyPath: m_Name
       value: Farm
@@ -2156,6 +2190,8 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 2921657215676179265, guid: 703098f698b4d914db4f8696d3d61d41, type: 3}
     - {fileID: 592035643928727683, guid: 703098f698b4d914db4f8696d3d61d41, type: 3}
+    - {fileID: 2465636792644676694, guid: 703098f698b4d914db4f8696d3d61d41, type: 3}
+    - {fileID: 3330725152306158633, guid: 703098f698b4d914db4f8696d3d61d41, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
