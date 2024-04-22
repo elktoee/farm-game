@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Inventory.Model;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -58,6 +59,9 @@ public class Item : MonoBehaviour
     public void OnPointerClick(BaseEventData data){
         PointerEventData pointerData = (PointerEventData)data;
         OnItemClicked?.Invoke(this); 
+
+        GroundInteractStatic.instanse.SelectedImage = itemImage.sprite;
+        
     }
 }
 }

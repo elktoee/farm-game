@@ -17,6 +17,7 @@ public class UIInventory : MonoBehaviour
     [SerializeField]
     private MouseFollower mouseFollower;
 
+public
     List<Item> ListOfUIItems = new List<Item>();
 
     private int currentlyDraggedItemIndex = -1;
@@ -25,6 +26,7 @@ public class UIInventory : MonoBehaviour
         OnItemActionRequested,
         OnStartDragging;
     public event Action<int, int> OnSwapItems;
+
 
     private void Awake()
     {
@@ -92,6 +94,7 @@ public class UIInventory : MonoBehaviour
 
     private void HandleItemSelection(Item item)
     {
+        
         int index = ListOfUIItems.IndexOf(item);
         if(index == -1)
             return;
