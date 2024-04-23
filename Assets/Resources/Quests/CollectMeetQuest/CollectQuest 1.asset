@@ -16,8 +16,7 @@ MonoBehaviour:
   displayName: Harvest Feast
   description: The village is hungry for a feast, and it's up to you to provide!
     Gather 5 chicken meat, 5 cow meat, and 7 pig meat from your farm. Beware of farmyard
-    antics as you collect the ingredients. Return to the innkeeper with your bounty
-    to be hailed as the hero of the harvest!
+    antics as you collect the ingredients.
   quest: Collect 10 potatoes
   questPrerequisites: []
   questStepPrefabs:

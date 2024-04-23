@@ -80,6 +80,7 @@ GameObject:
   - component: {fileID: 1487020862782286572}
   - component: {fileID: 3179749549313505437}
   - component: {fileID: 1763149673426869097}
+  - component: {fileID: 6660214460583204035}
   m_Layer: 0
   m_Name: White cow - Sheet_17
   m_TagString: Action
@@ -274,3 +275,18 @@ MonoBehaviour:
   lootTable: {fileID: 3179749549313505437}
   inv: 0
   prefab: {fileID: 7210257206462941180, guid: 4fb138883aa527fcca4a7904229bcc56, type: 3}
+  lootIcon: {fileID: -1515781035, guid: 5b22fa5b00c3f29b787d18fd14247e8c, type: 3}
+--- !u!114 &6660214460583204035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5558564086507747343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60f984228a5db794d93a5d8ff4e09dc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextStateChance: 0
+  animalInteract: {fileID: 1763149673426869097}
