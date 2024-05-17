@@ -12,10 +12,14 @@ public class DayPhaseController : MonoBehaviour
     [SerializeField]
     private GameObject[] _lights;
 
+    public void setDay(bool value){
+        if (value){
+            ppv.weight = 0;
+        }
+        
+    }
 
     private void Start(){
-        
-
         timer.OnTimeChanged += OnTimeChanged;
     }
 

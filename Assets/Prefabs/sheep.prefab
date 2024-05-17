@@ -49,6 +49,7 @@ GameObject:
   - component: {fileID: 4144689503220042039}
   - component: {fileID: 3382931801476975567}
   - component: {fileID: 2134994629465933182}
+  - component: {fileID: 1643024764397977278}
   m_Layer: 0
   m_Name: Sheep - Sheet_16
   m_TagString: Action
@@ -243,6 +244,21 @@ MonoBehaviour:
   lootTable: {fileID: 3382931801476975567}
   inv: 0
   prefab: {fileID: 7210257206462941180, guid: c1d00ad52889e3f1b93085e47099b21d, type: 3}
+  lootIcon: {fileID: 21300000, guid: a88d5300df9790349866dcad93d3a1ea, type: 3}
+--- !u!114 &1643024764397977278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6721096464139793164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60f984228a5db794d93a5d8ff4e09dc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextStateChance: 0.01
+  animalInteract: {fileID: 2134994629465933182}
 --- !u!1 &7119027762118093777
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,12 +13,11 @@ MonoBehaviour:
   m_Name: CollectQuest 2
   m_EditorClassIdentifier: 
   <id>k__BackingField: CollectQuest 2
-  displayName: Collect Potatoes
-  description: The village farmers urgently need potatoes for the upcoming winter.
-    Your task is to gather a sufficient quantity of potatoes from the fields. Return
-    to Farmer Griswald when you've gathered enough.
+  displayName: Egg Delivery
+  description: The baker needs eggs for breakfast. Collect 10 fresh ones from your
+    henhouse and deliver them to the bakery. Quick and easy!
   quest: Collect 10 potatoes
   questPrerequisites: []
   questStepPrefabs:
-  - {fileID: 4737869404789539308, guid: 535b24e3d3660b17ebe91cfa21107949, type: 3}
-  goldReward: 10
+  - {fileID: 4737869404789539308, guid: ecaa4f696e02c4045a4024f12c323b4f, type: 3}
+  goldReward: 30

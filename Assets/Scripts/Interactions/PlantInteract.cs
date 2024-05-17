@@ -7,11 +7,11 @@ public class PlantInteract : Interactable
     [SerializeField]
     private LootTable lootTable;
 
-    private Collider parentCollider; // Колайдер батьківського об'єкта
+    private GroundInteract parentCollider; // Колайдер батьківського об'єкта
 
     void Start()
     {
-        parentCollider = GetComponentInParent<Collider>(); // Отримати колайдер батьківського об'єкта
+        parentCollider = GetComponentInParent<GroundInteract>(); // Отримати колайдер батьківського об'єкта
     }
 
     public override void Interact(GameObject player)
@@ -25,10 +25,11 @@ public class PlantInteract : Interactable
             }
         }
         
-        // Ввімкнути колайдер батьківського об'єкта
+        // Ввімкнути колайде рбатьківського об'єкта
         if (parentCollider != null)
         {
-            parentCollider.enabled = true;
+            parentCollider.collider.enabled = true;
+            parentCollider.State = 0;
         }
         
         Destroy(this.gameObject);

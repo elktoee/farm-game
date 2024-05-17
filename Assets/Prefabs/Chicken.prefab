@@ -80,6 +80,7 @@ GameObject:
   - component: {fileID: 397641673781470301}
   - component: {fileID: 7015389055548695648}
   - component: {fileID: 6779225455666768277}
+  - component: {fileID: 273341310154416975}
   m_Layer: 0
   m_Name: farming-chicken_0
   m_TagString: Action
@@ -259,6 +260,7 @@ MonoBehaviour:
   lootTable: {fileID: 6779225455666768277}
   inv: 0
   prefab: {fileID: 7210257206462941180, guid: 91815d32feed265f780faf985befab6a, type: 3}
+  lootIcon: {fileID: 21300000, guid: 14c5c48283a8eeb4098db89eda4a48ff, type: 3}
 --- !u!114 &6779225455666768277
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -276,3 +278,17 @@ MonoBehaviour:
     dropChance: 3
   - itemPrefab: {fileID: 7210257206462941180, guid: fda08f764ed197514993ba5831c37825, type: 3}
     dropChance: 1
+--- !u!114 &273341310154416975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9086665862783275480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60f984228a5db794d93a5d8ff4e09dc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextStateChance: 0.01
+  animalInteract: {fileID: 7015389055548695648}

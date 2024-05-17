@@ -30,7 +30,7 @@ public class Plant : MonoBehaviour
     void TryTransitionToNextState()
     {
         // Перевіряємо, чи рослина може перейти в наступний стан
-        if (Random.value < nextStateChance)
+        if (Random.value < nextStateChance * Time.deltaTime)
         {
             TransitionToNextState();
         }

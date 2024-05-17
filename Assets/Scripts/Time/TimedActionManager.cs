@@ -8,7 +8,6 @@ public class PredefinedAction
     public string actionKey;
     public float startTime;
     public float delay;
-
     public string json;
 }
 
@@ -26,7 +25,10 @@ public class TimedActionManager : MonoBehaviour
 
     private Dictionary<string, Action<string>> predefinedActions = new Dictionary<string, Action<string>>
     {
-        { "Action1", (jsonData) => Debug.Log($"Action 1 executed with data: {jsonData}") },
+        { "Action1", (jsonData) => {
+            Debug.Log($"Action 1 executed with data: {jsonData}") ;
+        
+        }},
         { "Action2", (jsonData) => Debug.Log($"Action 2 executed with data: {jsonData}") }
         // Add more predefined actions here as needed
     };
@@ -128,6 +130,6 @@ public class TimedActionManager : MonoBehaviour
     }
 
     private void Start(){
-        this.ExecuteActionAfterDelay("Action1","JSONDATA123",10);
+        TimedActionManager.instance.ExecuteActionAfterDelay("Action1","J212342SONDATA123",10);
     }
 }
